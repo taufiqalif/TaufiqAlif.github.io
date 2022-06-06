@@ -550,16 +550,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   z-index: 10;
 }
 
-.-z-10 {
-  z-index: -10;
+.z-20 {
+  z-index: 20;
 }
 
 .z-\[99999\] {
   z-index: 99999;
-}
-
-.z-20 {
-  z-index: 20;
 }
 
 .mx-8 {
@@ -580,6 +576,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mx-4 {
   margin-left: 1rem;
   margin-right: 1rem;
+}
+
+.mt-3 {
+  margin-top: 0.75rem;
 }
 
 .mr-2 {
@@ -636,10 +636,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .mb-8 {
   margin-bottom: 2rem;
-}
-
-.mt-3 {
-  margin-top: 0.75rem;
 }
 
 .block {
@@ -1243,29 +1239,9 @@ body {
   background-color: rgb(15 23 42 / var(--tw-bg-opacity));
 }
 
-.dark .dark\:bg-white {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.dark .dark\:bg-slate-700 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(51 65 85 / var(--tw-bg-opacity));
-}
-
 .dark .dark\:bg-slate-800 {
   --tw-bg-opacity: 1;
   background-color: rgb(30 41 59 / var(--tw-bg-opacity));
-}
-
-.dark .dark\:bg-slate-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(203 213 225 / var(--tw-bg-opacity));
-}
-
-.dark .dark\:text-orange-500 {
-  --tw-text-opacity: 1;
-  color: rgb(249 115 22 / var(--tw-text-opacity));
 }
 
 .dark .dark\:text-white {
@@ -1280,16 +1256,6 @@ body {
 
 .dark .dark\:shadow-slate-500 {
   --tw-shadow-color: #64748b;
-  --tw-shadow: var(--tw-shadow-colored);
-}
-
-.dark .dark\:shadow-slate-700 {
-  --tw-shadow-color: #334155;
-  --tw-shadow: var(--tw-shadow-colored);
-}
-
-.dark .dark\:shadow-slate-600 {
-  --tw-shadow-color: #475569;
   --tw-shadow: var(--tw-shadow-colored);
 }
 
