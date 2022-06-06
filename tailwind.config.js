@@ -6,6 +6,9 @@ module.exports = {
       padding: '16px',
     },
     extend: {
+      fontFamily: {
+        lobster: ['Lobster Two', 'cursive'],
+      },
       colors: {},
       screens: {
         '2xl': '1320px',
