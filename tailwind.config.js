@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       fontFamily: {
         lobster: ['Lobster Two', 'cursive'],
+        caveat: ['Caveat', 'cursive'],
       },
       colors: {},
       screens: {

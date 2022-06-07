@@ -952,6 +952,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-family: Lobster Two, cursive;
 }
 
+.font-caveat {
+  font-family: Caveat, cursive;
+}
+
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -1335,6 +1339,11 @@ body {
     padding-top: 2.5rem;
   }
 
+  .lg\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
   .lg\:text-5xl {
     font-size: 3rem;
     line-height: 1;
@@ -1353,11 +1362,6 @@ body {
   .lg\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
-  }
-
-  .lg\:text-3xl {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
   }
 
   .lg\:shadow-none {
