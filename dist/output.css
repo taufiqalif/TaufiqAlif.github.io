@@ -952,12 +952,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-family: Lobster Two, cursive;
 }
 
-.font-caveat {
-  font-family: Caveat, cursive;
-}
-
 .font-courgette {
   font-family: Courgette, cursive;
+}
+
+.font-caveat {
+  font-family: Caveat, cursive;
 }
 
 .text-lg {
@@ -1303,6 +1303,18 @@ body {
 
   .lg\:mt-9 {
     margin-top: 2.25rem;
+  }
+
+  .lg\:mt-3 {
+    margin-top: 0.75rem;
+  }
+
+  .lg\:mt-5 {
+    margin-top: 1.25rem;
+  }
+
+  .lg\:mt-0 {
+    margin-top: 0px;
   }
 
   .lg\:block {
