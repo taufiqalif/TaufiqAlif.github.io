@@ -10,6 +10,7 @@ module.exports = {
       fontFamily: {
         lobster: ['Lobster Two', 'cursive'],
         caveat: ['Caveat', 'cursive'],
+        courgette: ['Courgette', 'cursive'],
       },
       colors: {},
       screens: {
