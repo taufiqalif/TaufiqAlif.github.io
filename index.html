@@ -105,7 +105,7 @@
               Alif
               Rahman</span>
           </h1>
-          <h2 class="font-medium text-slate-500 text-lg mb-5 lg:text-2xl">Mahasiswa | Web Developer</h2>
+          <h2 class="font-medium text-slate-500 text-lg mb-5 lg:text-2xl">Mahasiswa</h2>
           <p class="font-medium font-caveat text-2xl text-slate-400 mb-10 leading-relaxed">Semuanya itu butuh belajar,
             Belajar
             dari kesalahan
@@ -384,8 +384,23 @@
             tenetur iure doloribus.</p> -->
         </div>
       </div>
-      <form action="">
+
+      <form action="" name="contact-form">
         <div class="w-full md:w-1/2 md:mx-auto">
+          <div
+            class="bg-teal-100 border border-teal-400 text-slate-700 px-4 py-3 mb-5 rounded-full relative my-alert hidden"
+            role="alert">
+            <strong class="font-bold">Successful! </strong>
+            <span class="block sm:inline">your message has been sent</span>
+            <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
+              <svg class="fill-current h-6 w-6 text-teal-500" role="button" xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20">
+                <title>Close</title>
+                <path
+                  d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z" />
+              </svg>
+            </span>
+          </div>
           <div class="w-full px-4 mb-8">
             <label for="name" class="text-base font-bold text-teal-500">Nama</label>
             <input type="text" name="name" id="name"
@@ -398,12 +413,28 @@
           </div>
           <div class="w-full px-4 mb-8">
             <label for="pesan" class="text-base font-bold text-teal-500">Pesan</label>
-            <textarea type="text" name="name" id="name"
+            <textarea type="text" name="pesan" id="pesan"
               class="w-full bg-slate-300 p-3 text-slate-900 rounded-lg focus:outline-none h-32"></textarea>
           </div>
-          <div class="w-full px-4">
-            <button
-              class="text-base font-semibold text-white bg-teal-500 hover:bg-teal-600 py-3 px-8 rounded-full w-full hover:shadow-lg transition duration-500">Kirim</button>
+          <div class="w-full px-4 btn-kirim">
+            <button type="submit"
+              class="text-base font-semibold text-white bg-teal-500 hover:bg-teal-600 py-3 px-8 rounded-full w-full hover:shadow-lg transition duration-500 ">Kirim</button>
+          </div>
+          <div class="hidden btn-loading">
+            <div class="flex items-center justify-center w-full px-4">
+              <button type="submit"
+                class="inline-flex items-center px-4 py-2 text-sm font-semibold leading-6 text-white transition duration-150 ease-in-out bg-teal-500 rounded-full w-full shadow cursor-not-allowed hover:bg-teal-400"
+                disabled="">
+                <svg class="w-5 h-5 mr-3 -ml-1 text-white animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none"
+                  viewBox="0 0 24 24">
+                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                  <path class="opacity-75" fill="currentColor"
+                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                  </path>
+                </svg>
+                Loading...
+              </button>
+            </div>
           </div>
         </div>
       </form>
@@ -530,6 +561,39 @@
   <!-- akhir back to top end -->
 
   <script src="dist/js/script.js"></script>
+
+  <!-- contact form -->
+  <script>
+    const scriptURL =
+      'https://script.google.com/macros/s/AKfycbxFAPkMgDvAgh6afQaqxrG1Njdml3q__K_6Cy9vyYppwuvs87l8qGjNn01mPGgTeY24/exec'
+    const form = document.forms['contact-form']
+    const btnKirim = document.querySelector('.btn-kirim')
+    const btnLoading = document.querySelector('.btn-loading')
+    const aler = document.querySelector('.my-alert')
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      // ketika tombol kirim ditekan maka akan menampilkan loading
+      btnLoading.classList.toggle('hidden');
+      btnKirim.classList.toggle('hidden');
+      fetch(scriptURL, {
+          method: 'POST',
+          body: new FormData(form)
+        })
+        .then(response => {
+          // tampilkan tombol kirim, hilangkan loading
+          btnLoading.classList.toggle('hidden');
+          btnKirim.classList.toggle('hidden');
+          // tampilkan alert
+          aler.classList.toggle('hidden');
+          // reset form
+          form.reset();
+          console.log('Success!', response);
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+  <!-- akhir contact form -->
 </body>
 
 </html>
